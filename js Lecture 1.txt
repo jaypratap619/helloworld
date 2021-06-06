@@ -1,0 +1,323 @@
+/************************************** Part 1 *****************************************************************/
+/*
+
+var fname = 'jay';
+var age = 19;
+
+// Type coercion
+
+console.log(fname + ' ' + age);  
+
+var job,isMarried;
+job = 'student';
+isMarried = false;
+
+console.log(fname + ' is a ' + age + ' year old ' + job + '. Is he married ? ' + isMarried);
+
+//Variable mutation
+age = 'Nineteen';
+
+//pop up
+
+alert(fname + ' is a ' + age + ' year old ' + job + '. Is he married ? ' + isMarried);
+
+var lname = prompt("What is his Last name ?");
+console.log(fname + ' ' +lname); 
+
+*/
+
+/*
+var age1,age2,agecomp;
+age1 = 100-76;
+age2 = 100-67;
+agecomp = age1 < age2;;
+console.log(agecomp);
+console.log(typeof age1 + ' ' + typeof age2 + ' ' + typeof agecomp); 
+var x;
+console.log(typeof x);
+var y=null;
+console.log(typeof y);
+
+*/
+/*
+var markh,markm,jhonh,jhonm;
+markm=65;
+markh=1.4;
+jhonm=70;
+jhonh=1.5;
+var bmi_mark = markm/(markh*markh);
+var bmi_john = jhonm/(jhonh*jhonh);
+var is =  bmi_mark > bmi_john;
+console.log(bmi_mark,bmi_john );
+console.log('Is marks BMI higher than john ? ' + is);
+*/
+
+/*
+
+var fname = 'jay';
+var age = 19;
+
+switch(true){
+    case age < 13:
+        console.log(fname + ' is a kid');
+        break;
+    case age >= 13 && age < 20 :
+        console.log(fname + ' is teenager');
+        break;
+    case age >=20 && age < 30:
+        console.log(fname + ' is young man');
+        break;
+    default:
+        console.log(fname + ' is Man');
+}
+*/
+
+/*
+
+var johnAvg=(89+120+103)/3;
+var markAvg=(116+94+123)/3;
+var marryAvg=(97+134+105)/3;
+console.log(johnAvg, markAvg, marryAvg);
+
+if(johnAvg>markAvg && johnAvg>maryAvg ){
+    console.log('jhon is winner with average of '+ johnAvg + ' points');
+}
+else if(markAvg>johnAvg && markAvg>marryAvg ){
+    console.log('mark is winner with average of '+ markAvg + ' points');
+}
+else if(marryAvg>johnAvg && marryAvg>markAvg ){
+    console.log('marry is winner with average of '+ marryAvg + ' points');
+}
+else{
+    console.log('There is a Draw');
+}
+*/
+
+//Function decleration
+//function whatYouDo(fname,job){}
+
+/*
+
+//Function expression
+var whatYouDo = function(fname , job)
+{
+    switch(job){
+        case 'teacher':
+            return fname + ' teaches kid';
+        case 'driver':
+            return fname + ' drives uber';
+        default:
+            return fname + ' does something else';
+    }
+}
+
+console.log(whatYouDo('jay','teacher'));
+console.log(whatYouDo('tushar','driver'));
+
+
+
+//Exercise for Arrays
+
+function tipCalc(bill){
+    if(bill < 50){
+                return bill*.2;
+            }
+            else if(bill >= 50 && bill <=200){
+                return bill*.15;
+            }
+            else{
+                return bill*.1;
+            }
+}
+
+var bills = [124,48,268];
+var tips = [ tipCalc(bills[0]),tipCalc(bills[1]),tipCalc(bills[2]) 
+            ];
+var final = new Array(
+    tips[0]+bills[0],tips[1]+bills[1],tips[2]+bills[2]                                    );
+
+console.log(tips,final);
+                                       
+*/
+
+/*Arrays in js can have different data structures*/
+
+/**************************************/
+
+//Objects and its properties
+//objext literal
+
+/*
+var jay = {
+    fname : 'jay',
+    lname :'pratap',
+    age : 19,
+    job : 'Student',
+    isMarried : false
+} ;
+jay.isMarried = true;
+
+console.log(jay);
+console.log(jay.age);
+console.log(jay['job']);
+var x = 'lname';
+console.log(jay[x]);
+
+//new object syntax
+
+
+var raushan = new Object();
+raushan.fName = 'raushan';
+raushan.lName = 'Kumar';
+raushan.age = 20;
+raushan['isMarried']= false;
+console.log(raushan);
+
+*/
+/*
+var jay = {
+    fname : 'jay',
+    lname :'pratap',
+    bithyear : 1999,
+    job : 'Student',
+    isMarried : false,
+    calcAge : function(){
+        this.age = 2020 - this.bithyear;
+    }
+} ;
+
+jay.calcAge();
+console.log(jay);
+*/
+
+//coding challenge 4
+/*
+
+var john = {
+    fullname : 'John Smith',
+    mass : 68,
+    height : 1.4,
+    clacBMI : function(){
+        this.bmi = this.mass / (this.height*this.height);
+        return this.bmi;
+    }
+};
+
+var mark = {
+    fullname : 'Mark Miller',
+    mass : 70,
+    height : 1.5,
+    clacBMI : function(){
+        this.bmi = this.mass / (this.height*this.height);
+        return this.bmi;
+    }
+};
+
+john.clacBMI();
+mark.clacBMI();
+
+if(john.bmi > mark.bmi){
+    console.log(john.fullname+"'s bmi is higher");
+}
+
+else if(john.bmi < mark.bmi){
+    console.log(mark.fullname+"'s bmi is higher");
+}
+
+else {
+    console.log("Both have equal bmi ' s");
+}
+
+*/
+
+// coding Challege 5
+
+/*
+
+var john = {
+    fullname : 'John Smith',
+    bills : [124,48,268,180,42],
+    
+    calcTip : function()
+    {
+        this.tips = [];
+        this.amount = [];
+        for(var i = 0 ; i < this.bills.length ; i++)
+        {
+            
+            var bill = this.bills[i];
+            if(bill < 50){
+                this.tips[i] = bill*.2;
+            }
+            else if(bill >= 50 && bill <200){
+                this.tips[i] = bill*.15;
+            }
+            else{
+                this.tips[i] = bill*.1;
+            }
+            this.amount[i] = this.bills[i] + this.tips[i]; 
+        }
+        
+    }
+}
+
+var mark = {
+    fullname : 'Mark Miller',
+    bills : [77,375,110,45],
+    
+    calcTip : function()
+    {
+        this.tips = [];
+        this.amount = [];
+        for(var i = 0 ; i < this.bills.length ; i++)
+        {
+            
+            var bill = this.bills[i];
+            if(bill < 100){
+                this.tips[i] = bill*.2;
+            }
+            else if(bill >= 100 && bill <300){
+                this.tips[i] = bill*.1;
+            }
+            else{
+                this.tips[i] = bill*.25;
+            }
+            this.amount[i] = this.bills[i] + this.tips[i]; 
+        }
+        
+    }
+}
+
+var tipAvg = function(tips){
+    sum = 0;
+    for(var i = 0 ; i<tips.length ; i++)
+    {
+            sum = sum + tips[i];
+    }
+    return sum/tips.length;
+}
+
+john.calcTip();
+mark.calcTip();
+
+john.avg = tipAvg(john.tips);
+mark.avg = tipAvg(mark.tips);
+
+if(john.avg > mark.avg){
+    console.log(john.fullname+" pays higher tips on average");
+}
+
+else if(john.avg < mark.avg){
+    console.log(mark.fullname+" pays higher tips on average");
+}
+
+else {
+    console.log("Both pays equal tips on average");
+}
+
+*/
+
+//////////////////********************************** Part 2 *****************************************************//////
+
+
+
